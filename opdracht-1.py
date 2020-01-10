@@ -152,15 +152,44 @@ def opdracht11():
 
 
 def opdracht12():
-    i = -4
-    sin = 
-    print()
+    sin_4 = (6*math.sin(-4)) + (-4 ** 2)
+    sin_3 = (6*math.sin(-3)) + (-3 ** 2)
+    sin_2 = (6*math.sin(-2)) + (-2 ** 2)
+    sin_1 = (6*math.sin(-1)) + (-1 ** 2)
+    sin0 = (6*math.sin(0)) + (0 ** 2)
+    sin1 = (6*math.sin(1)) + (1 ** 2)
+    sin2 = (6*math.sin(2)) + (2 ** 2)
+    sin3 = (6*math.sin(3)) + (3 ** 2)
+    sin4 = (6*math.sin(4)) + (4 ** 2)
+    print(sin_4)
+    print(sin_3)
+    print(sin_2)
+    print(sin_1)
+    print(sin0)
+    print(sin1)
+    print(sin2)
+    print(sin3)
+    print(sin4)
 
 def opdracht13():
-    print("deze opdracht is nog niet verder uitgewerkt. ")
+    straal = int(input("Wat is de straal van je cirkel (in centimeter)? "))
+
+    opp = (straal ** 2) * math.pi
+    omt = (straal * 2) * math.pi
+
+    print(opp)
+    print(omt)
 
 def opdracht14():
-    print("deze opdracht is nog niet verder uitgewerkt. ")
+    inp = int(input("geef een heel getal. "))
+
+    while inp >= 1:
+        while (inp % 2) == 0:
+            inp = inp / 2
+        while (inp % 2) == 1:
+            inp = ((inp * 3) + 1) / 2
+
+    print(inp)
 
 def opdracht15():
     print("deze opdracht is nog niet verder uitgewerkt. ")
@@ -198,4 +227,4 @@ def main():
     if answer == "opdracht 1":
         opdracht1()    
 
-opdracht11()
+opdracht14()

@@ -1,4 +1,5 @@
 import random
+import math
 
 def opdracht1():
     firstFour = input("Enter your four numbers. ")
@@ -93,6 +94,7 @@ def opdracht8():
     fibonacci2(20)
 
 def opdracht9():
+    som = 0
     numA = int(input("Enter a number that is smaller then 10. "))
     while numA > 10:
         numA = int(input("The number is bigger then 10. \nPlease enter a number smaller then 10. "))
@@ -107,8 +109,19 @@ def opdracht9():
     while numA < numA9 + 10:
         print(str(numA) + "       " + str(numA ** 3) + "           " + str(numA ** 4))
         numA = numA + 1
+
+    if (numA9 % 2) == 1:
+        start = numA9 + 1 
+
+    else:
+        start = numA9 + 2
     
-    print("\n" * 5)
+    
+    while start < numB:
+        som = som + (start ** 2)
+        start = start + 2
+
+    print(som)
 
 def opdracht10():
     prijs = 0
@@ -123,10 +136,25 @@ def opdracht10():
     
 
 def opdracht11():
-    print("deze opdracht is nog niet verder uitgewerkt. ")
+    lijst = []
+    aantal = 0
+
+    for i in range(100):
+        i = random.randint(0, 100)
+        lijst.append(i)
+
+    for i in lijst:
+        if (i % 2) == 0:
+            aantal = aantal + 1
+    
+    print("Even: " + str(aantal))
+    print("Oneven: " + str(100 - aantal))
+
 
 def opdracht12():
-    print("deze opdracht is nog niet verder uitgewerkt. ")
+    i = -4
+    sin = 
+    print()
 
 def opdracht13():
     print("deze opdracht is nog niet verder uitgewerkt. ")
@@ -170,4 +198,4 @@ def main():
     if answer == "opdracht 1":
         opdracht1()    
 
-main()
+opdracht11()

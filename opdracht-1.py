@@ -75,7 +75,7 @@ def opdracht7():
     rente = int(input("wat is je rente in percentages? ")) / 100
     berdagPM = int(input("welk pedrag wil je per maand aflossen in euro's? "))
 
-    print(((lenenBedrag + (lenenBedrag *  rente)) - berdagPM) / 12 + " jaar")
+    aantalJaren = ((lenenBedrag + (lenenBedrag *  rente)) - berdagPM) / 12
 
 def opdracht8():
     def fibonacci2(n):
@@ -150,7 +150,6 @@ def opdracht11():
     print("Even: " + str(aantal))
     print("Oneven: " + str(100 - aantal))
 
-
 def opdracht12():
     sin_4 = (6*math.sin(-4)) + (-4 ** 2)
     sin_3 = (6*math.sin(-3)) + (-3 ** 2)
@@ -174,22 +173,29 @@ def opdracht12():
 def opdracht13():
     straal = int(input("Wat is de straal van je cirkel (in centimeter)? "))
 
-    opp = (straal ** 2) * math.pi
-    omt = (straal * 2) * math.pi
+    def opp() {
+        opp = (straal ** 2) * math.pi
+        print(opp)
+    }
 
-    print(opp)
-    print(omt)
+    def omt() {
+        omt = (straal * 2) * math.pi
+        print(omt)
+    }
+    
+    opp()
+    omt()
 
 def opdracht14():
     inp = int(input("geef een heel getal. "))
 
-    while inp >= 1:
-        while (inp % 2) == 0:
+    while inp > 1:
+        if (inp % 2) == 0:
             inp = inp / 2
-        while (inp % 2) == 1:
+            print(inp)
+        else:
             inp = ((inp * 3) + 1) / 2
-
-    print(inp)
+            print(inp)
 
 def opdracht15():
     print("deze opdracht is nog niet verder uitgewerkt. ")
@@ -227,4 +233,4 @@ def main():
     if answer == "opdracht 1":
         opdracht1()    
 
-opdracht14()
+main()

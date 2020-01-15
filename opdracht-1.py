@@ -173,15 +173,13 @@ def opdracht12():
 def opdracht13():
     straal = int(input("Wat is de straal van je cirkel (in centimeter)? "))
 
-    def opp() {
+    def opp():
         opp = (straal ** 2) * math.pi
         print(opp)
-    }
 
-    def omt() {
+    def omt():
         omt = (straal * 2) * math.pi
         print(omt)
-    }
     
     opp()
     omt()

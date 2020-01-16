@@ -74,8 +74,17 @@ def opdracht7():
     lenenBedrag = int(input("wat is je te lenen bedrag in euro's? "))
     rente = int(input("wat is je rente in percentages? ")) / 100
     berdagPM = int(input("welk pedrag wil je per maand aflossen in euro's? "))
+    jaar = 0
 
-    aantalJaren = ((lenenBedrag + (lenenBedrag *  rente)) - berdagPM) / 12
+    while lenenBedrag > 0 or jaar > 1000:
+        renteBedrag = lenenBedrag * rente
+        lenenBedrag = lenenBedrag + renteBedrag - 12 * berdagPM
+        jaar = jaar + 1
+        
+    if jaar > 1000:
+        print("You can't pay rent because it wont end. ")
+    else:
+        print("om het bedrag af te lossen, moet je elke maand " + str(berdagPM) + " euro \nDit moet je voor " + str(jaar) + " jaar doen.")
 
 def opdracht8():
     def fibonacci2(n):
@@ -125,15 +134,22 @@ def opdracht9():
 
 def opdracht10():
     prijs = 0
-    goOn = True
-    uur = input("Hoeveel uur sta je? ")
-    minuten = input("Hoeveel minuten sta je")
+    uur = int(input("Hoeveel uur sta je? "))
+    minuten = int(input("Hoeveel minuten sta je? "))
 
-
-    while goOn:
-        if uur < 1 or minuten < 60 and uur == 0:
-            prijs = 1
+    if uur == 0  and minuten <= 60:
+        prijs = 1
+        print("je prijs is: " + str(prijs) + " euro")
     
+    else:
+        euroPrijs = prijs
+        euroPrijs = euroPrijs +  uur
+        if minuten >= 30:
+            prijs = 0.75
+            prijs = prijs + euroPrijs
+            print("je prijs is: " + str(prijs) + " euro")
+        else:
+            print("je prijs is: " + str(euroPrijs) + " euro")
 
 def opdracht11():
     lijst = []
@@ -196,7 +212,7 @@ def opdracht14():
             print(inp)
 
 def opdracht15():
-    print("deze opdracht is nog niet verder uitgewerkt. ")
+    print("Deze opdracht is nog niet uitgewerkt")
 
 def main():
     answer = input("Welke opdracht wil je doen? ")
@@ -231,4 +247,4 @@ def main():
     if answer == "opdracht 1":
         opdracht1()    
 
-main()
+opdracht15()

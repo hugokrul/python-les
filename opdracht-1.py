@@ -212,22 +212,37 @@ def opdracht14():
             print(inp)
 
 def opdracht15():
-    ontvangenBedrag = input("Geef een bedrag op onder 10 euro: €")
-    while ontvangenBedrag > 10:
+    ontvangenBedrag = int(input("Geef een bedrag op onder 10 euro: €"))
+    while ontvangenBedrag >= 10:
         ontvangenBedrag = input("Dit bedrag is niet lager dan 10. \nGeef een bedrag op onder de 10 euro: €")
 
-    # euro10 = 0
-    # euro5 = 0
-    # euro2 = 0
-    # euro1 = 0
-    # euro05 = 0
-    # euro02 = 0
-    # euro01 = 0
-    # euro05 = 0
+    ontvangenBedragCent = ontvangenBedrag * 100
 
-    while ontvangenBedrag > 0:
-        while ontvangenBedrag >= 0:
-            pass
+    if ontvangenBedragCent >= 0:
+        a = ontvangenBedragCent / 200
+    ontvangenBedragCent = ontvangenBedragCent - 200 * a
+    if ontvangenBedragCent >= 0:
+        b = ontvangenBedragCent / 100
+    ontvangenBedragCent = ontvangenBedragCent - 100 * b
+    if ontvangenBedragCent >= 0:
+        b = ontvangenBedragCent / 50
+    ontvangenBedragCent = ontvangenBedragCent - 50 * b 
+    if ontvangenBedragCent >= 0:
+        c = ontvangenBedragCent / 20
+    ontvangenBedragCent = ontvangenBedragCent - 20 * c
+    if ontvangenBedragCent >= 0:
+        d = ontvangenBedragCent / 10
+    ontvangenBedragCent = ontvangenBedragCent - 10 * d
+    if ontvangenBedragCent >= 0:
+        e = ontvangenBedragCent / 5
+    ontvangenBedragCent = ontvangenBedragCent - 5 * e
+
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+    print(e)
+
 
 def main():
     answer = input("Welke opdracht wil je doen? ")

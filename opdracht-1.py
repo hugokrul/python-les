@@ -212,7 +212,22 @@ def opdracht14():
             print(inp)
 
 def opdracht15():
-    print("Deze opdracht is nog niet uitgewerkt")
+    ontvangenBedrag = input("Geef een bedrag op onder 10 euro: €")
+    while ontvangenBedrag > 10:
+        ontvangenBedrag = input("Dit bedrag is niet lager dan 10. \nGeef een bedrag op onder de 10 euro: €")
+
+    # euro10 = 0
+    # euro5 = 0
+    # euro2 = 0
+    # euro1 = 0
+    # euro05 = 0
+    # euro02 = 0
+    # euro01 = 0
+    # euro05 = 0
+
+    while ontvangenBedrag > 0:
+        while ontvangenBedrag >= 0:
+            pass
 
 def main():
     answer = input("Welke opdracht wil je doen? ")

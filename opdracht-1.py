@@ -279,5 +279,3 @@ def main():
         opdracht2()
     if answer == "opdracht 1":
         opdracht1()    
-
-main()

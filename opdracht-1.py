@@ -1,5 +1,4 @@
-import random
-import math
+import random, math, decimal
 
 def opdracht1():
     firstFour = input("Enter your four numbers. ")
@@ -212,37 +211,41 @@ def opdracht14():
             print(inp)
 
 def opdracht15():
-    ontvangenBedrag = int(input("Geef een bedrag op onder 10 euro: €"))
+    ontvangenBedrag = float(input("Geef een bedrag op onder 10 euro: €"))
     while ontvangenBedrag >= 10:
         ontvangenBedrag = input("Dit bedrag is niet lager dan 10. \nGeef een bedrag op onder de 10 euro: €")
 
-    ontvangenBedragCent = ontvangenBedrag * 100
+    def bepaalMuntGeld(bedrag):
+        aantal2Euro = int(bedrag / 2)
+        restbedrag2 = bedrag - aantal2Euro * 2
+        rounded2 = round(restbedrag2, 2)
+        print("aantal 2 euro: " + str(aantal2Euro))
 
-    if ontvangenBedragCent >= 0:
-        a = ontvangenBedragCent / 200
-    ontvangenBedragCent = ontvangenBedragCent - 200 * a
-    if ontvangenBedragCent >= 0:
-        b = ontvangenBedragCent / 100
-    ontvangenBedragCent = ontvangenBedragCent - 100 * b
-    if ontvangenBedragCent >= 0:
-        b = ontvangenBedragCent / 50
-    ontvangenBedragCent = ontvangenBedragCent - 50 * b 
-    if ontvangenBedragCent >= 0:
-        c = ontvangenBedragCent / 20
-    ontvangenBedragCent = ontvangenBedragCent - 20 * c
-    if ontvangenBedragCent >= 0:
-        d = ontvangenBedragCent / 10
-    ontvangenBedragCent = ontvangenBedragCent - 10 * d
-    if ontvangenBedragCent >= 0:
-        e = ontvangenBedragCent / 5
-    ontvangenBedragCent = ontvangenBedragCent - 5 * e
+        aantal1Euro = int(rounded2 / 1)
+        restbedrag1 = rounded2 - aantal1Euro
+        rounded1 = round(restbedrag1, 2)
+        print("aantal 1 euro: " + str(aantal1Euro))
 
-    print(a)
-    print(b)
-    print(c)
-    print(d)
-    print(e)
+        aantal50Cent = int(rounded1 / 0.5)
+        restbedrag50 = rounded1 - aantal50Cent * 0.5
+        rounded50 = round(restbedrag50, 2)
+        print("aantal 0.5 euro: " + str(aantal50Cent))
 
+        aantal20Cent = int(rounded50 / 0.2)
+        restbedrag20 = rounded50 - aantal20Cent * 0.2
+        rounded20 = round(restbedrag20, 2)
+        print("aantal 0.20 euro: " + str(aantal20Cent))
+
+        aantal10Cent = int(rounded20 / 0.1)
+        restbedrag10 = rounded20 - aantal10Cent * 0.1
+        rounded10 = round(restbedrag10, 2)
+        print("aantal 0.10 euro: " + str(aantal10Cent))
+        
+        aantal05Cent = int(rounded10 / 0.05)
+        restbedrag05 = rounded10 - aantal05Cent * 0.05
+        print("aantal 0.05 euro: " + str(aantal05Cent))
+
+    bepaalMuntGeld(ontvangenBedrag)
 
 def main():
     answer = input("Welke opdracht wil je doen? ")
@@ -277,4 +280,4 @@ def main():
     if answer == "opdracht 1":
         opdracht1()    
 
-opdracht15()
+main()
